@@ -1,3 +1,8 @@
+"""
+Given the number of reservations, Find the Linear regression between that and the 
+number of pizzas that will be ordered
+"""
+
 import numpy as np
 
 
