@@ -2,7 +2,6 @@
 Given the number of reservations, Find the Linear regression between that and the 
 number of pizzas that will be ordered
 """
-import math
 import numpy as np
 
 
@@ -26,8 +25,8 @@ def train(
     x_array: np.array, y_array: np.array, iterations: int, learning_rate: float
 ) -> float:
     """NOTE:
-    The learning rate is a small number that determines how much the models parameters
-    are updated during the training.
+    The learning rate is a small number that determines how much the weight
+    is updated during the training.
     """
     weight = 0
     for i in range(iterations):
@@ -49,7 +48,7 @@ def main():
     num_reservations = input("Enter the number of reservations to predict pizzas for: \n")
     weight = train(x_array, y_array, iterations, learning_rate)
     print(f"Found the linear regression weight: {weight:.4f}")
-    print(f"Predicted number of pizzas are: {math.ceil(float(num_reservations) * weight)}")
+    print(f"Predicted number of pizzas are: {(float(num_reservations) * weight):.4f}")
 
 if __name__ == "__main__":
     main()
