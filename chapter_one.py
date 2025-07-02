@@ -27,7 +27,7 @@ def train(
     weight = 0
     for i in range(iterations):
         current_loss = loss(x_array, y_array, weight)
-        print(f"Current Iteration: {i} => Current Loss: {current_loss}")
+        print(f"Current Iteration: {i} => Current Loss: {current_loss:.4f}")
         if loss(x_array, y_array, weight + learning_rate) < current_loss:
             weight += learning_rate
         elif loss(x_array, y_array, weight - learning_rate) < current_loss:
@@ -39,7 +39,10 @@ def train(
 
 def main():
     x_array, y_array = np.loadtxt("pizza.txt", skiprows=1, unpack=True)
-    iterations = 5
+    iterations = 186
     learning_rate = 0.01
     weight = train(x_array, y_array, iterations, learning_rate)
-    print(f"Found the linear regression weight: {weight}")
+    print(f"Found the linear regression weight: {weight:.4f}")
+
+if __name__ == "__main__":
+    main()
